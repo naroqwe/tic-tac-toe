@@ -3,9 +3,7 @@ const gameBoardModule = (function () {
   const winnerHeading = document.querySelector(".winner");
   const restartButton = document.querySelector(".restart-button");
 
-  // let board = ["x", "", "o", "x", "o", "", "x", "", ""];
   let board = ["", "", "", "", "", "", "", "", ""];
-  const getBoard = () => board;
   let currentPlayer = "X";
 
   function render() {
@@ -53,6 +51,7 @@ const gameBoardModule = (function () {
       const [a, b, c] = element;
       if (board[a] && board[a] === board[b] && board[a] === board[c]) {
         winnerHeading.innerHTML = `${board[c]} is the winner`;
+
         return true;
       }
     }
